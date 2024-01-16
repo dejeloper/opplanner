@@ -15,7 +15,7 @@ dependencies:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
   zustand:
-    specifier: ^4.4.7
+    specifier: 4.4.7
     version: 4.4.7(@types/react@18.2.43)(react@18.2.0)
 
 devDependencies:
