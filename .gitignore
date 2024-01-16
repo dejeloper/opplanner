@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# package-lock.json is automatically generated for npm >= 5
+pnpm-lock.yaml
