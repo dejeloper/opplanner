@@ -5,6 +5,7 @@ interface TaskStore {
   draggingTaskId?: string;
   tasks: Record<string, Task>;
   getTaskByStatus: (status: TaskStatus) => Task[];
+  setDraggingTaskId: (taskId: string) => void;
 }
 
 const storeApiTask: StateCreator<TaskStore> = (set, get) => ({
@@ -21,6 +22,9 @@ const storeApiTask: StateCreator<TaskStore> = (set, get) => ({
   getTaskByStatus: (status: TaskStatus) => {
     const tasks = Object.values(get().tasks);
     return tasks.filter((task) => task.status === status);
+  },
+  setDraggingTaskId: (taskId: string) => {
+    set({ draggingTaskId: taskId });
   },
 });
 
