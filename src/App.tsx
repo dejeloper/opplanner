@@ -1,10 +1,10 @@
-import { Main } from "@/components/Main";
-
 function App() {
   return (
-    <>
-      <Main />
-    </>
+    <main>
+      <section>Header</section>
+      <section>Main</section>
+      <section>Footer</section>
+    </main>
   );
 }
 

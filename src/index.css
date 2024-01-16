@@ -4,4 +4,18 @@
 
 body {
   font-family: "Onest Variable", sans-serif;
+  box-sizing: border-box;
+  position: relative;
+  min-width: 0px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
