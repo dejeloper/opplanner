@@ -2,11 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Onest Variable", sans-serif;
+* {
   box-sizing: border-box;
   position: relative;
   min-width: 0px;
+}
+
+body {
+  font-family: "Onest Variable", sans-serif;
+  min-height: 100dvh;
 }
 
 h1,
