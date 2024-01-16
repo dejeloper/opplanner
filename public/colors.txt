@@ -1,0 +1,7 @@
+ - bg-one => text-five 
+ - bg-two => text-five 
+ - bg-three => text-two 
+ - bg-four => text-two 
+ - bg-five => text-one 
+ - bg-gris => text-one 
+ 
