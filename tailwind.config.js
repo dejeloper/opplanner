@@ -12,6 +12,15 @@ export default {
         gris: "#f2f4f7",
       },
     },
+    screens: {
+      xs: "420px",
+      sm: "576px",
+      md: "768px",
+      lg: "992",
+      xl: "1200px",
+      xxl: "1440px",
+    },
   },
   plugins: [],
+  darkMode: "media",
 };
