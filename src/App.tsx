@@ -39,7 +39,7 @@ function App() {
     useIsDarkTheme();
 
   useEffect(() => {
-    handleThemeToggleEfect;
+    handleThemeToggleEfect();
   }, [handleThemeToggleEfect]);
 
   const darkModePreference = window.matchMedia("(prefers-color-scheme: dark)");
