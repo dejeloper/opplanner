@@ -1,11 +1,12 @@
 interface Props {
+  id: string;
   className?: string;
 }
 
-export function IconMoon({ className }: Props) {
+export function IconMoon({ id, className }: Props) {
   return (
     <svg
-      id="theme-toggle-dark-icon"
+      id={id}
       className={className}
       fill="currentColor"
       viewBox="0 0 20 20"
