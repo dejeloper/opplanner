@@ -17,7 +17,6 @@ import {
   IconLock,
   IconLogout,
   IconMenu,
-  IconMoon,
   IconNotification,
   IconPages,
   IconPie,
@@ -27,12 +26,13 @@ import {
   IconSales,
   IconSearch,
   IconSetting,
-  IconSun,
   IconUserPlus,
   IconUsers,
   IconVideoCamera,
 } from "./components/icons";
 import { useIsDarkTheme } from "./hooks";
+import { SearchDasboard } from "./components/searchDasboard";
+import { ThemeToggle } from "./components/ThemeToggle";
 
 function App() {
   const { changeThemeToggle, handleThemeToggle, handleThemeToggleEfect } =
@@ -50,7 +50,7 @@ function App() {
 
   return (
     <>
-      <div className="antialiased bg-gray-50 dark:bg-gray-900">
+      <div className="antialiased">
         <nav className="bg-white border-b border-gray-200 px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50">
           <div className="flex flex-wrap justify-between items-center">
             <div className="flex justify-start items-center">
@@ -65,36 +65,13 @@ function App() {
 
                 <span className="sr-only">Toggle sidebar</span>
               </button>
-              <a
-                href="https://flowbite.com"
-                className="flex items-center justify-between mr-4"
-              >
-                <img
-                  src="https://flowbite.s3.amazonaws.com/logo.svg"
-                  className="mr-3 h-8"
-                  alt="Flowbite Logo"
-                />
+              <a href="#" className="flex items-center justify-between mr-4">
+                <img src="/logo.svg" className="mr-3 h-8" alt="Flowbite Logo" />
                 <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                  Flowbite
+                  Opplanner
                 </span>
               </a>
-              <form action="#" method="GET" className="hidden md:block md:pl-2">
-                <label htmlFor="topbar-search" className="sr-only">
-                  Search
-                </label>
-                <div className="relative md:w-64">
-                  <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                    <IconSearch className="w-5 h-5 text-gray-500 dark:text-gray-400" />
-                  </div>
-                  <input
-                    type="text"
-                    name="email"
-                    id="topbar-search"
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    placeholder="Search"
-                  />
-                </div>
-              </form>
+              <SearchDasboard />
             </div>
             <div className="flex items-center lg:order-2">
               <button
@@ -107,16 +84,7 @@ function App() {
                 <IconSearch className="w-6 h-6" />
               </button>
 
-              <button
-                id="theme-toggle"
-                type="button"
-                className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
-                onClick={handleThemeToggle}
-                onLoad={handleThemeToggle}
-              >
-                <IconMoon id="theme-toggle-dark" className={`w-5 h-5 hidden`} />
-                <IconSun id="theme-toggle-light" className={`w-5 h-5 hidden`} />
-              </button>
+              <ThemeToggle handleThemeToggle={handleThemeToggle} />
 
               <button
                 type="button"
