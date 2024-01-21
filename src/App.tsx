@@ -1,14 +1,11 @@
 import { useEffect } from "react";
-
-import { useIsDarkTheme } from "./hooks";
-import { SearchDasboard } from "./components/searchDasboard";
 import { ThemeToggle } from "./components/ThemeToggle";
+import { SearchDasboard } from "./components/SearchDasboard";
+import { useIsDarkTheme } from "./hooks";
 import {
   IconArrowDown,
   IconComment,
-  IconMoon,
   IconNotification,
-  IconSun,
 } from "./components/icons";
 
 function App() {
