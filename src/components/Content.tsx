@@ -11,11 +11,11 @@ export function Content() {
   return (
     <>
       <div className="grid grid-flow-row md:grid-flow-col w-full gap-4 mt-4 h-full">
-        <ListTask title="Backlog" tasks={backlogTasks} value="backlog" />
-        <ListTask title="Sprint" tasks={sprintTasks} value="sprint" />
-        <ListTask title="In Progress" tasks={devTasks} value="dev" />
-        <ListTask title="Testing" tasks={testingTasks} value="testing" />
-        <ListTask title="Done" tasks={doneTasks} value="done" />
+        <ListTask title="Backlog" tasks={backlogTasks} status="backlog" />
+        <ListTask title="Sprint" tasks={sprintTasks} status="sprint" />
+        <ListTask title="In Progress" tasks={devTasks} status="dev" />
+        <ListTask title="Testing" tasks={testingTasks} status="testing" />
+        <ListTask title="Done" tasks={doneTasks} status="done" />
       </div>
     </>
   );

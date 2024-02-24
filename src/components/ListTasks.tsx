@@ -5,18 +5,38 @@ import type { Task, TaskStatus } from "@/interfaces";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { RiAddCircleFill, RiCheckboxCircleLine } from "react-icons/ri";
+import Swal from "sweetalert2";
 
 interface Props {
   title: string;
   tasks: Task[];
-  value: TaskStatus;
+  status: TaskStatus;
 }
 
-export function ListTask({ title, value, tasks }: Props) {
+export function ListTask({ title, status, tasks }: Props) {
   const isDragging = useTaskStore((s) => !!s.draggingTaskId);
   const onTaskDrop = useTaskStore((s) => s.onTaskDrop);
+  const addTask = useTaskStore((s) => s.addTask);
 
   const [onDragOver, setOnDragOver] = useState(false);
+
+  const handleAddTask = async () => {
+    const { isConfirmed, value } = await Swal.fire({
+      title: "Agregar tarea",
+      input: "text",
+      inputLabel: "Nombre de la tarea",
+      inputPlaceholder: "Ingrese el nombre de la tarea",
+      showCancelButton: true,
+      inputValidator: (value: string) => {
+        if (!value) {
+          return "El nombre de la tarea es requerido";
+        }
+      },
+    });
+
+    if (!isConfirmed) return;
+    addTask(value, status);
+  };
 
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -29,7 +49,7 @@ export function ListTask({ title, value, tasks }: Props) {
   const handleDrop = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setOnDragOver(false);
-    onTaskDrop(value);
+    onTaskDrop(status);
   };
 
   return (
@@ -51,7 +71,10 @@ export function ListTask({ title, value, tasks }: Props) {
           </div>
           <h2 className="ml-2 font-semibold text-three select-none">{title}</h2>
         </div>
-        <button className="flex items-center justify-center rounded-full text-contrast h-6 w-6 mr-1">
+        <button
+          className="flex items-center justify-center rounded-full text-contrast h-6 w-6 mr-1"
+          onClick={handleAddTask}
+        >
           <RiAddCircleFill />
         </button>
       </div>
