@@ -1,7 +1,7 @@
 import { StateCreator, create } from "zustand";
 import { v4 as uuidv4 } from "uuid";
 import type { Task, TaskStatus } from "@/interfaces";
-import { devtools } from "zustand/middleware";
+import { devtools, persist } from "zustand/middleware";
 
 interface TaskStore {
   draggingTaskId?: string;
@@ -64,4 +64,10 @@ const storeApiTask: StateCreator<TaskStore> = (set, get) => ({
   },
 });
 
-export const useTaskStore = create<TaskStore>()(devtools(storeApiTask));
+export const useTaskStore = create<TaskStore>()(
+  devtools(
+    persist(storeApiTask, {
+      name: "task-store",
+    })
+  )
+);
