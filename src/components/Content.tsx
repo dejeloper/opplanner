@@ -2,16 +2,11 @@ import { useTaskStore } from "@/store";
 import { ListTask } from "./ListTasks";
 
 export function Content() {
-  const backlogTasks = useTaskStore((state) =>
-    state.getTaskByStatus("backlog")
-  );
-
-  const sprintTasks = useTaskStore((state) => state.getTaskByStatus("sprint"));
-  const devTasks = useTaskStore((state) => state.getTaskByStatus("dev"));
-  const testingTasks = useTaskStore((state) =>
-    state.getTaskByStatus("testing")
-  );
-  const doneTasks = useTaskStore((state) => state.getTaskByStatus("done"));
+  const backlogTasks = useTaskStore((s) => s.getTaskByStatus("backlog"));
+  const sprintTasks = useTaskStore((s) => s.getTaskByStatus("sprint"));
+  const devTasks = useTaskStore((s) => s.getTaskByStatus("dev"));
+  const testingTasks = useTaskStore((s) => s.getTaskByStatus("testing"));
+  const doneTasks = useTaskStore((s) => s.getTaskByStatus("done"));
 
   return (
     <>

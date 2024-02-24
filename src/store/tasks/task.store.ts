@@ -1,11 +1,13 @@
-import type { Task, TaskStatus } from "@/interfaces";
 import { StateCreator, create } from "zustand";
+import type { Task, TaskStatus } from "@/interfaces";
+import { devtools } from "zustand/middleware";
 
 interface TaskStore {
   draggingTaskId?: string;
   tasks: Record<string, Task>;
   getTaskByStatus: (status: TaskStatus) => Task[];
   setDraggingTaskId: (taskId: string) => void;
+  removeDraggingTaskId: () => void;
 }
 
 const storeApiTask: StateCreator<TaskStore> = (set, get) => ({
@@ -26,6 +28,9 @@ const storeApiTask: StateCreator<TaskStore> = (set, get) => ({
   setDraggingTaskId: (taskId: string) => {
     set({ draggingTaskId: taskId });
   },
+  removeDraggingTaskId: () => {
+    set({ draggingTaskId: undefined });
+  },
 });
 
-export const useTaskStore = create<TaskStore>()(storeApiTask);
+export const useTaskStore = create<TaskStore>()(devtools(storeApiTask));
