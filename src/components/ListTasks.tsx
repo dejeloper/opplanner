@@ -8,11 +8,13 @@ import { twMerge } from "tailwind-merge";
 interface Props {
   title: string;
   tasks: Task[];
-  value?: TaskStatus;
+  value: TaskStatus;
 }
 
 export function ListTask({ title, value, tasks }: Props) {
   const isDragging = useTaskStore((s) => !!s.draggingTaskId);
+  const onTaskDrop = useTaskStore((s) => s.onTaskDrop);
+
   const [onDragOver, setOnDragOver] = useState(false);
 
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
@@ -26,6 +28,7 @@ export function ListTask({ title, value, tasks }: Props) {
   const handleDrop = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setOnDragOver(false);
+    onTaskDrop(value);
   };
 
   return (
