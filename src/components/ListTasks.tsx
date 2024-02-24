@@ -1,9 +1,10 @@
-import type { Task, TaskStatus } from "@/interfaces";
-import { TaskCard } from "./TaskCard";
 import { DragEvent, useState } from "react";
 import { useTaskStore } from "@/store";
+import { TaskCard } from "./TaskCard";
+import type { Task, TaskStatus } from "@/interfaces";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { RiAddCircleFill, RiCheckboxCircleLine } from "react-icons/ri";
 
 interface Props {
   title: string;
@@ -43,9 +44,18 @@ export function ListTask({ title, value, tasks }: Props) {
         })
       )}
     >
-      <div className="py-2 px-2">
-        <h2 className="font-semibold text-three select-none">{title}</h2>
-
+      <div className="py-2 px-2 relative flex flex-row justify-between">
+        <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center rounded-full bg-gris text-two">
+            <RiCheckboxCircleLine />
+          </div>
+          <h2 className="ml-2 font-semibold text-three select-none">{title}</h2>
+        </div>
+        <button className="flex items-center justify-center rounded-full text-contrast h-6 w-6 mr-1">
+          <RiAddCircleFill />
+        </button>
+      </div>
+      <div className="h-full w-full">
         {tasks.length > 0 ? (
           tasks.map((task) => <TaskCard key={task.id} task={task} />)
         ) : (

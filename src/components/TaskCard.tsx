@@ -15,7 +15,7 @@ export function TaskCard({ task }: Props) {
       draggable={true}
       onDragStart={() => setDraggingTaskId(task.id)}
       onDragEnd={() => removeDraggingTaskId()}
-      className="flex justify-between items-center   p-2 cursor-pointer"
+      className="flex justify-between items-center p-2 cursor-pointer"
     >
       <div className="flex justify-center items-center gap-2">
         <h3 className="font-medium ">{task.title}</h3>
