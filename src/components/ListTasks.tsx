@@ -17,6 +17,8 @@ export function ListTask({ title, status, tasks }: Props) {
   const isDragging = useTaskStore((s) => !!s.draggingTaskId);
   const onTaskDrop = useTaskStore((s) => s.onTaskDrop);
   const addTask = useTaskStore((s) => s.addTask);
+  const totalTasks = useTaskStore((s) => s.getTaskByStatus(status));
+  const taskCount = Object.values(totalTasks).length;
 
   const [onDragOver, setOnDragOver] = useState(false);
 
@@ -69,7 +71,9 @@ export function ListTask({ title, status, tasks }: Props) {
           <div className="flex items-center justify-center rounded-full bg-gris text-two">
             <RiCheckboxCircleLine />
           </div>
-          <h2 className="ml-2 font-semibold text-three select-none">{title}</h2>
+          <h2 className="ml-2 font-semibold text-three select-none">
+            {title}: {taskCount}
+          </h2>
         </div>
         <button
           className="flex items-center justify-center rounded-full text-contrast h-6 w-6 mr-1"
