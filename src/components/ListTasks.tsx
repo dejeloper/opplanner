@@ -36,7 +36,7 @@ export function ListTask({ title, value, tasks }: Props) {
       className={twMerge(
         clsx("bg-two mx-2 rounded-xl border-4 border-transparent", {
           "border-gris border-dotted": isDragging,
-          "border-warning border-dotted": isDragging && onDragOver,
+          "border-success border-dotted": isDragging && onDragOver,
         })
       )}
     >
