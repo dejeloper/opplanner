@@ -13,6 +13,7 @@ export default {
         success: "#86efac",
         warning: "#facc15",
         danger: "#f87171",
+        contrast: "#a78bfa",
       },
     },
   },
