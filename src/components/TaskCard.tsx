@@ -20,7 +20,7 @@ export function TaskCard({ task }: Props) {
       <div className="flex justify-center items-center gap-2">
         <h3 className="font-medium ">{task.title}</h3>
       </div>
-      <span className="h-6 w-6 ">
+      <span className="h-6 w-6">
         <RiMenuFill />
       </span>
     </div>
