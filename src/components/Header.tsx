@@ -1,10 +1,12 @@
+import { HeaderLogo, HeaderNav } from "./head";
+
 export function Header() {
   return (
-    <section className="flex flex-col items-center py-2 w-full border-b border-three  justify-center">
-      <h1 className="mt-4 text-2xl">Opplanner</h1>
-      <h3 className="mt-2 text-base text-three">
-        Estas son las Tareas que tienes programadas
-      </h3>
+    <section className="flex items-center border-b border-black/10 w-full h-[60px]">
+      <div className="container flex items-center px-3 mx-auto max-w-[1480px]">
+        <HeaderLogo />
+        <HeaderNav />
+      </div>
     </section>
   );
 }
