@@ -3,7 +3,7 @@ import { Content } from "./components/Content";
 
 function App() {
   return (
-    <main className="flex flex-col w-full max-h-max">
+    <main className="flex flex-col w-full">
       <Header />
       <Content />
     </main>

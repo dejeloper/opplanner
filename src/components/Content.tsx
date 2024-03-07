@@ -1,21 +1,12 @@
-import { useTaskStore } from "@/store";
-import { ListTask } from "./ListTasks";
+import { ContentHeader } from "./main/ContentHeader";
+import { ContentTabs } from "./main/ContentTabs";
 
 export function Content() {
-  const backlogTasks = useTaskStore((s) => s.getTaskByStatus("backlog"));
-  const sprintTasks = useTaskStore((s) => s.getTaskByStatus("sprint"));
-  const devTasks = useTaskStore((s) => s.getTaskByStatus("dev"));
-  const testingTasks = useTaskStore((s) => s.getTaskByStatus("testing"));
-  const doneTasks = useTaskStore((s) => s.getTaskByStatus("done"));
-
   return (
     <>
-      <div className="grid grid-flow-row md:grid-flow-col w-full gap-4 mt-4 h-full">
-        <ListTask title="Backlog" tasks={backlogTasks} status="backlog" />
-        <ListTask title="Sprint" tasks={sprintTasks} status="sprint" />
-        <ListTask title="In Progress" tasks={devTasks} status="dev" />
-        <ListTask title="Testing" tasks={testingTasks} status="testing" />
-        <ListTask title="Done" tasks={doneTasks} status="done" />
+      <div className="flex flex-col justify-center min-h-[calc(100dvh-60px)] overflow-y-auto px-4 py-6 mx-auto max-w-[1480px]">
+        <ContentHeader />
+        <ContentTabs />
       </div>
     </>
   );
