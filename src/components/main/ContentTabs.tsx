@@ -9,25 +9,25 @@ export function ContentTabs() {
       <div className="flex tabs-header justify-between border-b mb-4">
         <ul className="flex flex-row">
           <li>
-            <TabButton active={true}>Overview</TabButton>
+            <TabButton active={true}>General</TabButton>
           </li>
           <li>
-            <TabButton>Tasks</TabButton>
+            <TabButton>Tareas</TabButton>
           </li>
           <li>
-            <TabButton>Milestones</TabButton>
+            <TabButton>Categorías</TabButton>
           </li>
           <li>
-            <TabButton>Messages</TabButton>
+            <TabButton>Mensajes</TabButton>
           </li>
           <li>
-            <TabButton>Files</TabButton>
+            <TabButton>Archivos</TabButton>
           </li>
           <li>
-            <TabButton>Time</TabButton>
+            <TabButton>Tiempos</TabButton>
           </li>
           <li>
-            <TabButton>Comments</TabButton>
+            <TabButton>Comentarios</TabButton>
           </li>
         </ul>
 

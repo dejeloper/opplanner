@@ -4,19 +4,19 @@ export function HeaderMenu() {
   return (
     <ul className="flex justity-start items-center ml-8">
       <li>
-        <HeaderMenuItems>Starts</HeaderMenuItems>
+        <HeaderMenuItems>Inicio</HeaderMenuItems>
       </li>
       <li>
-        <HeaderMenuItems active={true}>Projects</HeaderMenuItems>
+        <HeaderMenuItems active={true}>Proyectos</HeaderMenuItems>
       </li>
       <li>
-        <HeaderMenuItems>Planning</HeaderMenuItems>
+        <HeaderMenuItems>Planeación</HeaderMenuItems>
       </li>
       <li>
-        <HeaderMenuItems>Teams</HeaderMenuItems>
+        <HeaderMenuItems>Equipo</HeaderMenuItems>
       </li>
       <li>
-        <HeaderMenuItems>Calendar</HeaderMenuItems>
+        <HeaderMenuItems>Calendario</HeaderMenuItems>
       </li>
     </ul>
   );
