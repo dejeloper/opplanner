@@ -28,15 +28,15 @@ export function ListTask({ title, status, tasks }: Props) {
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
       className={twMerge(
-        clsx("bg-[#f4f5f8] mx-2 w-[300px] rounded-lg border-4", {
+        clsx("bg-[#f4f5f8] mx-2 rounded-lg border-4", {
           "border-transparent": !isDragging,
           "border-gris border-dotted": isDragging,
           "border-success border-dotted": isDragging && onDragOver,
         })
       )}
     >
-      <div className="py-2 px-2 relative flex flex-row justify-between">
-        <div className="flex justify-center items-center mb-6">
+      <div className="py-2 px-2 relative flex flex-row justify-between 2xl:bg-lime-500 xl:bg-cyan-500 lg:bg-red-500 md:bg-blue-500 sm:bg-green-500 xs:bg-yellow-500">
+        <div className="flex justify-center items-center mb-2">
           <h2 className="ml-2 font-semibold select-none">
             {title}: {taskCount}
           </h2>
@@ -48,7 +48,7 @@ export function ListTask({ title, status, tasks }: Props) {
           <RiAddFill />
         </button>
       </div>
-      <div className="w-full">
+      <div className="flex xs:flex-col sm:flex-row md:flex-col w-full ">
         {tasks.length > 0 ? (
           tasks.map((task) => <TaskCard key={task.id} task={task} />)
         ) : (

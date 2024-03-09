@@ -9,7 +9,7 @@ export function BoardTasks() {
   const doneTasks = useTaskStore((s) => s.getTaskByStatus("done"));
 
   return (
-    <div className="flex flex-1">
+    <div className="grid xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 xs:grid-cols-1 gap-1 w-full">
       <ListTask title="Backlog" tasks={backlogTasks} status="backlog" />
       <ListTask title="Sprint" tasks={sprintTasks} status="sprint" />
       <ListTask title="In Progress" tasks={devTasks} status="dev" />

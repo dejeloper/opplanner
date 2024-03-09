@@ -15,7 +15,7 @@ export function TaskCard({ task }: Props) {
       draggable={true}
       onDragStart={() => setDraggingTaskId(task.id)}
       onDragEnd={() => removeDraggingTaskId()}
-      className="flex flex-col items-center p-4 cursor-pointer mb-5 bg-white rounded-lg hover:bg-[#f0f9ff]"
+      className="flex flex-col items-center p-4 cursor-pointer mb-5 mx-3 bg-white rounded-lg hover:bg-[#f0f9ff]"
     >
       <div className="flex flex-col">
         <div className="flex justify-between w-full">
