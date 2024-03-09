@@ -4,4 +4,4 @@ export interface Task {
   status: TaskStatus;
 }
 
-export type TaskStatus = "backlog" | "sprint" | "dev" | "testing" | "done";
+export type TaskStatus = "waiting" | "process" | "testing" | "done";
