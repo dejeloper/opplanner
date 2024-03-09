@@ -35,7 +35,7 @@ export function ListTask({ title, status, tasks }: Props) {
         })
       )}
     >
-      <div className="py-2 px-2 relative flex flex-row justify-between 2xl:bg-lime-500 xl:bg-cyan-500 lg:bg-red-500 md:bg-blue-500 sm:bg-green-500 xs:bg-yellow-500">
+      <div className="py-2 px-2 relative flex flex-row justify-between">
         <div className="flex justify-center items-center mb-2">
           <h2 className="ml-2 font-semibold select-none">
             {title}: {taskCount}
