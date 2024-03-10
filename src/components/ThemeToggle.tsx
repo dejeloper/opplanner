@@ -7,7 +7,7 @@ interface Props {
 export function ThemeToggle({ handleThemeToggle }: Props) {
   return (
     <button
-      className="border bg-white dark:bg-two border-gray-200 dark:border-gray-600  hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-2.5"
+      className="border bg-white border-gray-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 rounded-full text-sm p-2.5"
       id="theme-toggle"
       type="button"
       onClick={handleThemeToggle}

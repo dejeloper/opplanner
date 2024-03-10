@@ -40,22 +40,22 @@ export function TaskCard({ task }: Props) {
         </div>
         <div className="flex -space-x-4 mt-2">
           <img
-            className="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
+            className="w-10 h-10 border-2 border-white rounded-full"
             src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
             alt=""
           />
           <img
-            className="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
+            className="w-10 h-10 border-2 border-white rounded-full"
             src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
             alt=""
           />
           <img
-            className="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
+            className="w-10 h-10 border-2 border-white rounded-full"
             src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
             alt=""
           />
           <img
-            className="w-10 h-10 border-2 border-white rounded-full dark:border-gray-800"
+            className="w-10 h-10 border-2 border-white rounded-full"
             src="https://flowbite.com/docs/images/people/profile-picture-4.jpg"
             alt=""
           />

@@ -25,7 +25,7 @@ export function SearchDasboard() {
             type="text"
             name="search"
             id="topbar-search"
-            className="bg-transparent border-none outline-none text-sm rounded-lg block w-full pl-10 p-2.5 dark:placeholder-gray-500 placeholder:text-gray-300"
+            className="bg-transparent border-none outline-none text-sm rounded-lg block w-full pl-10 p-2.5 placeholder:text-gray-300"
             placeholder="Buscar"
             autoComplete="off"
           />
