@@ -1,4 +1,3 @@
-import { IconMenu } from "../icons";
 import { HeaderMenu } from "./HeaderMenu";
 
 export function HeaderLogo() {
@@ -12,10 +11,7 @@ export function HeaderLogo() {
           title="Logo Opplanner"
         />
       </div>
-      <IconMenu className="w-6 h-6 md:hidden flex" />
-      <div className="md:flex hidden">
-        <HeaderMenu />
-      </div>
+      <HeaderMenu />
     </div>
   );
 }
