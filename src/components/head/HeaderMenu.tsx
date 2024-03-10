@@ -3,6 +3,7 @@ import { IconMenu } from "../icons";
 import { HeaderMenuItems } from "./HeaderMenuItems";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
+import { RiCloseFill } from "react-icons/ri";
 
 export function HeaderMenu() {
   const [open, setOpen] = useState(false);
@@ -26,6 +27,14 @@ export function HeaderMenu() {
         )}
       >
         <div>
+          <div className="flex">
+            <button
+              className="flex close-btn top-0 left-44 p-2 rounded-full hover:bg-gray-700 transition duration-300 ease-in-out  "
+              onClick={() => setOpen(false)}
+            >
+              <RiCloseFill />
+            </button>
+          </div>
           <ul>
             <li className="flex justify-start items-center pl-4 bg-[#cdcdcd] text-black w-full h-12 border border-slate-400">
               Inicio
