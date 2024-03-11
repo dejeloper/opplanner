@@ -5,7 +5,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   active?: boolean;
 }
 
-export function HeaderMenuItems({ children, ...props }: Props) {
+export function HeaderMenuItems({ children, active, ...props }: Props) {
   return (
     <button
       className={twMerge(
@@ -20,8 +20,8 @@ export function HeaderMenuItems({ children, ...props }: Props) {
         className={twMerge(
           clsx(
             "border-b-4 pb-1 ",
-            { "border-indigo-500": props.active },
-            { "border-transparent ": !props.active }
+            { "border-indigo-500": active },
+            { "border-transparent ": !active }
           )
         )}
       >
