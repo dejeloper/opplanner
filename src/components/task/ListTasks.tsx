@@ -48,7 +48,7 @@ export function ListTask({ title, status, tasks }: Props) {
           <RiAddFill />
         </button>
       </div>
-      <div className="flex xs:flex-col sm:flex-row md:flex-col w-full ">
+      <div className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-1 w-full ">
         {tasks.length > 0 ? (
           tasks.map((task) => <TaskCard key={task.id} task={task} />)
         ) : (
