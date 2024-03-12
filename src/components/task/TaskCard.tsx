@@ -1,6 +1,7 @@
-import { RiMoreFill } from "react-icons/ri";
+// import { RiMoreFill } from "react-icons/ri";
 import { Task } from "@/interfaces";
 import { useTaskStore } from "@/store";
+import ModalTask from "../ui/ModalTask";
 
 interface Props {
   task: Task;
@@ -20,9 +21,10 @@ export function TaskCard({ task }: Props) {
       <div className="flex flex-col">
         <div className="flex justify-between w-full">
           <h3 className="font-semibold">{task.title}</h3>
-          <span className="flex items-center justify-center rounded-md border border-[#0000001a] text-black bg-white h-6 w-6 font-semibold">
-            <RiMoreFill />
-          </span>
+          <ModalTask />
+          {/* <span className="flex items-center justify-center rounded-md border border-[#0000001a] text-black bg-white h-6 w-6 font-semibold">
+            <RiMoreFill /> 
+          </span> */}
         </div>
         <span className="font-medium mb-2 pt-3 leading-5 text-[#000000b3] text-sm">
           Improve the rendering of the page in the cart on mobile devices.
