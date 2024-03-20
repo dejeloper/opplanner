@@ -1,40 +1,56 @@
-import { RiFilter2Line, RiFullscreenLine, RiMenu2Fill } from "react-icons/ri";
+import { RiFilter2Line, RiFullscreenLine } from "react-icons/ri";
 import { BoardTasks } from "../task/BoardTasks";
 import { ButtonDisabled } from "../ui/ButtonDisabled";
 import { TabButton } from "../ui/TabButton";
 
 export function ContentTabs() {
+  const tabs = [
+    {
+      id: 1,
+      name: "General",
+      active: true,
+    },
+    {
+      id: 2,
+      name: "Tareas",
+      active: false,
+    },
+    {
+      id: 3,
+      name: "Categorías",
+      active: false,
+    },
+    {
+      id: 4,
+      name: "Mensajes",
+      active: false,
+    },
+    {
+      id: 5,
+      name: "Archivos",
+      active: false,
+    },
+    {
+      id: 6,
+      name: "Tiempos",
+      active: false,
+    },
+    {
+      id: 7,
+      name: "Comentarios",
+      active: false,
+    },
+  ];
+
   return (
     <div className="flex flex-col flex-1">
       <div className="flex tabs-header justify-between border-b mb-4">
-        <button className="flex sm:hidden items-center rounded-md bg-transparent border border-[#00000033] text-[#4a4e55] px-2 py-2 text-sm font-semibold shadow-sm hover:border-[#808997] mb-2">
-          <span className="text-lg lg:mr-2" title="Pantalla Completa">
-            <RiMenu2Fill />
-          </span>
-        </button>
-
-        <ul className="sm:flex hidden flex-row overflow-x-auto gap-2">
-          <li>
-            <TabButton active={true}>General</TabButton>
-          </li>
-          <li>
-            <TabButton>Tareas</TabButton>
-          </li>
-          <li>
-            <TabButton>Categorías</TabButton>
-          </li>
-          <li>
-            <TabButton>Mensajes</TabButton>
-          </li>
-          <li>
-            <TabButton>Archivos</TabButton>
-          </li>
-          <li>
-            <TabButton>Tiempos</TabButton>
-          </li>
-          <li>
-            <TabButton>Comentarios</TabButton>
-          </li>
+        <ul className="flex flex-row flex-wrap gap-2">
+          {tabs.map((tab) => (
+            <li key={tab.id}>
+              <TabButton active={tab.active}>{tab.name}</TabButton>
+            </li>
+          ))}
         </ul>
 
         <div className="md:flex gap-3 hidden">
