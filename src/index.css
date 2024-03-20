@@ -4,8 +4,6 @@
 
 * {
   box-sizing: border-box;
-  position: relative;
-  min-width: 0px;
   margin: 0;
 }
 
