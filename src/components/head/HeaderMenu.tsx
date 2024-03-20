@@ -55,7 +55,7 @@ export function HeaderMenu() {
       <div
         className={twMerge(
           clsx(
-            "sidebar md:hidden w-full bg-white h-screen fixed top-0 left-0 transition duration-400 ease-in-out z-20 text-base font-semibold leading-6",
+            "sidebar md:hidden w-full bg-white h-screen fixed top-0 left-0 transition duration-500 ease-in-out z-20 text-base font-semibold leading-6",
             {
               "translate-x-0": open,
               "-translate-x-full": !open,
@@ -66,7 +66,7 @@ export function HeaderMenu() {
         <div>
           <div className="flex flex-row-reverse mt-2">
             <button
-              className="flex close-btn top-0 left-0 p-2 rounded-full hover:bg-gray-700 transition duration-200 ease-in-out mr-4 border border-[#eaeaea] bg-white"
+              className="flex close-btn top-0 left-0 p-2 rounded-full hover:bg-gray-700 transition duration-500 ease-in-out mr-4 border border-[#eaeaea] bg-white"
               onClick={() => setOpen(false)}
             >
               <RiCloseFill />
@@ -106,7 +106,7 @@ export function HeaderMenu() {
       <div
         className={twMerge(
           clsx(
-            "fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 transition duration-400 ease-in-out z-10",
+            "fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 transition duration-500 ease-in-out z-10",
             {
               block: open,
               hidden: !open,
