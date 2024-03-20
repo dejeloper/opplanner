@@ -1,4 +1,4 @@
-import { IconMoon, IconSun } from "./icons";
+import { RiMoonLine, RiSunLine } from "react-icons/ri";
 
 interface Props {
   handleThemeToggle: () => void;
@@ -13,8 +13,8 @@ export function ThemeToggle({ handleThemeToggle }: Props) {
       onClick={handleThemeToggle}
       onLoad={handleThemeToggle}
     >
-      <IconMoon id="theme-toggle-dark" className={`w-5 h-5 hidden`} />
-      <IconSun id="theme-toggle-light" className={`w-5 h-5 hidden`} />
+      <RiMoonLine id="theme-toggle-dark" className={`w-5 h-5 hidden`} />
+      <RiSunLine id="theme-toggle-light" className={`w-5 h-5 hidden`} />
     </button>
   );
 }
