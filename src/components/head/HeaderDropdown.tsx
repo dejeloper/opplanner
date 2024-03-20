@@ -30,7 +30,7 @@ export const HeaderDropdown = ({
       right = "right-24 w-60";
       break;
     case 4:
-      right = "left-0 right-32";
+      right = "right-32 w-52";
       break;
     default:
       right = "right-0 w-60";
