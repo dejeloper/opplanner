@@ -21,19 +21,19 @@ export const HeaderDropdown = ({
   let right = "";
   switch (nivel) {
     case 1:
-      right = "right-4";
+      right = "right-0 w-60";
       break;
     case 2:
-      right = "right-14";
+      right = "left-0 right-14";
       break;
     case 3:
-      right = "right-24";
+      right = "left-0 right-24";
       break;
     case 4:
-      right = "right-32";
+      right = "left-0 right-32";
       break;
     default:
-      right = "right-4";
+      right = "left-0 right-4";
       break;
   }
 
@@ -42,7 +42,7 @@ export const HeaderDropdown = ({
       className={twMerge(
         clsx(
           right,
-          "top-8 left-0 absolute max-w-60 h-auto bg-white border border-slate-400 z-20 p-4 rounded-md shadow-md transition-all duration-300 ease-in-out overflow-hidden",
+          "top-8 absolute max-w-60 h-auto bg-white border border-slate-400 z-20 p-4 rounded-md shadow-md transition-all duration-300 ease-in-out overflow-hidden",
           {
             hidden: !openDropdown,
             block: openDropdown,
