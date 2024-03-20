@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { IconMenu } from "../icons";
 import { HeaderMenuItems } from "./HeaderMenuItems";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
-import { RiCloseFill } from "react-icons/ri";
+import { RiCloseFill, RiMenuLine } from "react-icons/ri";
 
 export function HeaderMenu() {
   const [open, setOpen] = useState(false);
@@ -51,7 +50,7 @@ export function HeaderMenu() {
         className="flex md:hidden toogle-btn"
         onClick={() => setOpen(!open)}
       >
-        <IconMenu className="w-6 h-6" />
+        <RiMenuLine className="w-6 h-6" />
       </button>
       <div
         className={twMerge(
