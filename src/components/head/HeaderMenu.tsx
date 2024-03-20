@@ -56,7 +56,7 @@ export function HeaderMenu() {
       <div
         className={twMerge(
           clsx(
-            "sidebar md:hidden w-52 bg-gray-700 text-[#808997] h-screen fixed top-0 left-0 transition duration-400 ease-in-out z-20 text-base font-semibold leading-6",
+            "sidebar md:hidden w-full bg-white h-screen fixed top-0 left-0 transition duration-400 ease-in-out z-20 text-base font-semibold leading-6",
             {
               "translate-x-0": open,
               "-translate-x-full": !open,
@@ -65,24 +65,43 @@ export function HeaderMenu() {
         )}
       >
         <div>
-          <div className="flex">
+          <div className="flex flex-row-reverse mt-2">
             <button
-              className="flex close-btn top-0 left-44 p-2 rounded-full hover:bg-gray-700 transition duration-300 ease-in-out"
+              className="flex close-btn top-0 left-0 p-2 rounded-full hover:bg-gray-700 transition duration-200 ease-in-out mr-4 border border-[#eaeaea] bg-white"
               onClick={() => setOpen(false)}
             >
               <RiCloseFill />
             </button>
           </div>
-          <ul>
-            {menu.map((item) => (
-              <li
-                key={item.id}
-                className="flex justify-start items-center pl-4 bg-white text-[#808997] w-full h-12 border border-slate-400"
-              >
-                {item.name}
-              </li>
-            ))}
-          </ul>
+          <div className="px-6 mt-4">
+            <div className="flex flex-col justify-start pl-2 bg-white text-[#171717] w-full border-b-2 border-[#eaeaea] font-normal ">
+              <div className="flex flex-1 w-full justify-between items-center py-4">
+                <div className="flex flex-col justify-start">
+                  <span className="text-sm"> Jhonatan Guerrero</span>
+                  <span className="text-xs">jhonatanguerrero@outlook.com</span>
+                </div>
+                <div>
+                  <picture>
+                    <img
+                      src="/images/Admin.jpg"
+                      alt="profile"
+                      className="w-8 h-8 rounded-full"
+                    />
+                  </picture>
+                </div>
+              </div>
+            </div>
+            <ul>
+              {menu.map((item) => (
+                <li
+                  key={item.id}
+                  className="flex justify-start items-center pl-2 bg-white text-[#171717] w-full h-12 border-b-2 border-[#eaeaea] font-normal "
+                >
+                  <span className="">{item.name}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div
