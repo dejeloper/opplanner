@@ -31,25 +31,12 @@ export const menuApps = [
     active: false,
   },
   {
-    id: 4,
-    name: "Linkedin",
+    id: 3,
+    name: "Otras Apps",
     icon: "",
-    path: "/#linkedin",
+    path: "/#others",
     active: false,
-  },
-  {
-    id: 5,
-    name: "Youtube",
-    icon: "",
-    path: "/#youtube",
-    active: false,
-  },
-  {
-    id: 6,
-    name: "Whatsapp",
-    icon: "",
-    path: "/#whatsapp",
-    active: false,
+    divider: true,
   },
 ];
 
@@ -112,5 +99,6 @@ export const menuUser = [
     icon: "",
     path: "/#cerrar-sesion",
     active: false,
+    divider: true,
   },
 ];
