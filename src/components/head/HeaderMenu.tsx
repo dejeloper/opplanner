@@ -1,54 +1,19 @@
-import { useState } from "react";
 import { HeaderMenuItems } from "./HeaderMenuItems";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
 import { RiCloseFill, RiMenuLine } from "react-icons/ri";
+import { menu } from "@/data/menu";
+import { useMenuStore } from "@/store";
 
 export function HeaderMenu() {
-  const [open, setOpen] = useState(false);
-  const menu = [
-    {
-      id: 1,
-      name: "Inicio",
-      icon: "",
-      path: "/",
-      active: false,
-    },
-    {
-      id: 2,
-      name: "Proyectos",
-      icon: "",
-      path: "/#projects",
-      active: true,
-    },
-    {
-      id: 3,
-      name: "Planeación",
-      icon: "",
-      path: "/#planning",
-      active: false,
-    },
-    {
-      id: 4,
-      name: "Equipo",
-      icon: "",
-      path: "/#team",
-      active: false,
-    },
-    {
-      id: 5,
-      name: "Calendario",
-      icon: "",
-      path: "/#calendar",
-      active: false,
-    },
-  ];
+  const isOpenMenuNav = useMenuStore((s) => s.isOpenMenuNav);
+  const setOpenMenuNav = useMenuStore((s) => s.setOpenMenuNav);
 
   return (
     <>
       <button
         className="flex md:hidden toogle-btn"
-        onClick={() => setOpen(!open)}
+        onClick={() => setOpenMenuNav(!isOpenMenuNav)}
       >
         <RiMenuLine className="w-6 h-6" />
       </button>
@@ -57,8 +22,8 @@ export function HeaderMenu() {
           clsx(
             "sidebar md:hidden w-full bg-white h-screen fixed top-0 left-0 transition duration-500 ease-in-out z-20 text-base font-semibold leading-6",
             {
-              "translate-x-0": open,
-              "-translate-x-full": !open,
+              "translate-x-0": isOpenMenuNav,
+              "-translate-x-full": !isOpenMenuNav,
             }
           )
         )}
@@ -67,7 +32,7 @@ export function HeaderMenu() {
           <div className="flex flex-row-reverse mt-2">
             <button
               className="flex close-btn top-0 left-0 p-2 rounded-full hover:bg-gray-700 transition duration-500 ease-in-out mr-4 border border-[#eaeaea] bg-white"
-              onClick={() => setOpen(false)}
+              onClick={() => setOpenMenuNav(false)}
             >
               <RiCloseFill />
             </button>
@@ -108,12 +73,12 @@ export function HeaderMenu() {
           clsx(
             "fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 transition duration-500 ease-in-out z-10",
             {
-              block: open,
-              hidden: !open,
+              block: isOpenMenuNav,
+              hidden: !isOpenMenuNav,
             }
           )
         )}
-        onClick={() => setOpen(false)}
+        onClick={() => setOpenMenuNav(false)}
       ></div>
 
       <nav className="md:flex hidden">

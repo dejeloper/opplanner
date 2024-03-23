@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { useState } from "react";
 import {
   RiApps2Fill,
   RiArrowDownSLine,
@@ -15,13 +14,21 @@ import {
   menuSearch,
   menuUser,
 } from "../../data/dropdowns";
+import { useMenuStore } from "@/store";
 
 export function HeaderNav() {
-  const [openDropdownUser, setOpenDropdownUser] = useState(false);
-  const [openDropdownNotifications, setOpenDropdownNotifications] =
-    useState(false);
-  const [openDropdownApps, setOpenDropdownApps] = useState(false);
-  const [openDropdownSearch, setOpenDropdownSearch] = useState(false);
+  const openDropdownSearch = useMenuStore((s) => s.isOpenMenuSearch);
+  const setOpenDropdownSearch = useMenuStore((s) => s.setOpenMenuSearch);
+  const openDropdownApps = useMenuStore((s) => s.isOpenMenuApps);
+  const setOpenDropdownApps = useMenuStore((s) => s.setOpenMenuApps);
+  const openDropdownNotifications = useMenuStore(
+    (s) => s.isOpenMenuNotifications
+  );
+  const setOpenDropdownNotifications = useMenuStore(
+    (s) => s.setOpenMenuNotifications
+  );
+  const openDropdownUser = useMenuStore((s) => s.isOpenMenuUser);
+  const setOpenDropdownUser = useMenuStore((s) => s.setOpenMenuUser);
 
   return (
     <div className="flex flex-col relative w-full">
@@ -83,22 +90,22 @@ export function HeaderNav() {
       <HeaderDropdown
         menu={menuSearch}
         openDropdown={openDropdownSearch}
-        nivel={4}
+        right="right-32 w-52"
       />
       <HeaderDropdown
         menu={menuApps}
         openDropdown={openDropdownApps}
-        nivel={3}
+        right="right-24 w-60"
       />
       <HeaderDropdown
         menu={menuNotifications}
         openDropdown={openDropdownNotifications}
-        nivel={2}
+        right="right-14 w-60"
       />
       <HeaderDropdown
         menu={menuUser}
         openDropdown={openDropdownUser}
-        nivel={1}
+        right="right-0 w-60"
       />
     </div>
   );

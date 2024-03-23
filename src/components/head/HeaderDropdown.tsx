@@ -13,31 +13,12 @@ interface HeaderDropdownProps {
 export const HeaderDropdown = ({
   menu,
   openDropdown,
-  nivel,
+  right,
 }: {
   menu: HeaderDropdownProps[];
-  openDropdown: boolean;
-  nivel: number;
+  openDropdown?: boolean;
+  right: string;
 }) => {
-  let right = "";
-  switch (nivel) {
-    case 1:
-      right = "right-0 w-60";
-      break;
-    case 2:
-      right = "right-14 w-60";
-      break;
-    case 3:
-      right = "right-24 w-60";
-      break;
-    case 4:
-      right = "right-32 w-52";
-      break;
-    default:
-      right = "right-0 w-60";
-      break;
-  }
-
   return (
     <div
       className={twMerge(
